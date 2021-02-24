@@ -1,0 +1,216 @@
+/* Global or Desktop View */
+body {
+    font-family: 'Asap', sans-serif;
+/* font-family: 'Montserrat', sans-serif; */
+background-color: #ebebeb;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.head-container{
+    height: 120px;
+    background-color: rgb(34, 34, 34);
+
+    /* To fix the whole grey bar with header of the website while scrolling */
+    position: fixed;
+    width: 100%;
+}
+
+header {
+    height: 120px;
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: indianred;   It was just placeholder color before inserting images*/
+    
+    color: beige;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    flex: 20%;
+    /* Font Properties for logo */
+    padding-left: 40px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 3%;
+    font-weight: 600;
+}
+
+.logo span {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+
+    /* so that the span text doesn't break for tablets */
+    display: inline-block;
+}
+
+nav {
+    flex: 12%;
+/* align-self: flex-end; */
+
+/* Displaying contents of nav in a flex  */
+display: flex;
+justify-content: space-around;
+}
+
+.nav-button {
+    height: 25px;
+    width: 120px;
+
+    border-radius: 3px;
+    border: 2px solid white;
+    /* background-color: yellow; */
+
+    text-align: center;
+    padding-top: 10px;
+}
+
+.burgermenu {
+    display: none;
+}
+
+.burger-options {
+    display: none;
+}
+
+.container {
+    /* Positioning and format */
+    min-height: 500px;
+    max-width: 1024px;
+    /* background-color: indianred; */
+    
+    /* left & Right margin is set to auto which positions our container in the middle */
+    margin: 0px auto; 
+
+    /* As the top head container & hence the header inside are pinned, the container starts from top itself beneath the header. So solve that, add a padding equal to height of header & the distance you want to place the container from the header*/
+    padding-top: 150px;
+
+    /* To make columns inside the container flex & it's other properties */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.col{
+   background-color: #343434;
+    /*  indigo - a good colour */
+
+    width: 30%;
+    /* height: 200px; */
+    margin-bottom: 40px;
+    border-radius: 20px;
+
+     /* properties to justify the description text*/ 
+     text-align: justify;
+     text-justify: inter-word;
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+}
+
+.col p{
+    font-size: 1 rem;
+    padding: 10px;
+    color: beige;
+    line-height: 1.35rem;
+}
+
+/* Making the first line of description of every portfolio item bold */
+.col p::first-line {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Tablet View */
+@media(max-width: 768px){
+    .col {
+        width: 47%;
+    }
+
+    .logo {
+       font-size: 1.5rem;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        /* position: fixed;
+        background-color: #222222;
+        width: 100%; */
+    }
+
+    nav {
+        display: none;
+    }
+
+    .burgermenu {
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        /* padding-top: 70px; */
+        /* margin-right: 100px; */
+
+        /* align-items: flex-start; */
+    }
+
+    .hamburger {
+        width: 40px; 
+    }
+
+    .burger-options {
+        display: block;
+        margin-top: 45px;
+
+        /* since clicking on hamburger shift the button itself up while sliding the options down, we have to fix the position of the optins buttons. Now making position of the hamburger button absolute messes with the flex, we have to apply this to options. Further*/
+        position: absolute;
+    }
+
+    .burger-button {
+        height: 20px;
+        width: 100px;
+        background-color: #333;
+        font-size: .825rem;
+
+        border-radius: 1px;
+        border: 1px solid white;
+
+        text-align: center;
+        padding: 5px 7px 0 7px;
+    }
+
+
+}
+/* Mobile View */
+@media(max-width: 500px){
+
+    .col {
+        width: 100%;
+    }
+
+    .head-container {
+        height: 70px;
+    }
+
+    header {
+        height: 70px;
+    }
+
+   .logo {
+    font-size: 1rem;
+}
+
+.hamburger {
+    width: 25px; 
+}
+    .burger-options { 
+        margin-top: 60px;
+    }
+}
